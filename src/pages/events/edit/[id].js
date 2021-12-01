@@ -16,7 +16,7 @@ import { formatDateForInput } from "@/utils/formatDate";
 export default function EditEventPage({ evt, token }) {
   const [values, setValues] = useState({
     name: evt.name,
-    performers: evt.performers,
+    organisers: evt.organisers,
     venue: evt.venue,
     address: evt.address,
     date: formatDateForInput(evt.date),
@@ -29,6 +29,7 @@ export default function EditEventPage({ evt, token }) {
   const [showModal, setShowModal] = useState(false);
 
   const router = useRouter();
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();

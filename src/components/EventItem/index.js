@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import styles from "@/styles/EventItem.module.css";
-import { formatDateForInput } from "@/utils/formatDate";
+import { formatDateForDisplay } from "@/utils/formatDate";
 
 export default function EventItem({ evt }) {
-  const formattedDate = formatDateForInput(evt.date);
+  const formattedDate = formatDateForDisplay(evt.date);
 
   return (
     <div className={styles.event}>

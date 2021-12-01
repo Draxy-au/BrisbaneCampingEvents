@@ -1,4 +1,4 @@
-import { parseCookies } from '@/helpers/index'
+import { parseCookies } from '@/utils/parseCookies'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useState } from 'react'
@@ -77,7 +77,7 @@ export default function AddEventPage({ token }) {
             />
           </div>
           <div>
-            <label htmlFor='performers'>Organisers</label>
+            <label htmlFor='organisers'>Organisers</label>
             <input
               type='text'
               name='organisers'
