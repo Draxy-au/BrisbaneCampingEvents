@@ -4,7 +4,7 @@ import styles from '@/styles/Footer.module.css';
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <p>Copyright &copy; Brisbane Camping Events 2021</p>
+      <p>Copyright &copy; QLD Camping Bears 2021</p>
       <p>
         <Link href='/about'>
           <a>About This Project</a>
