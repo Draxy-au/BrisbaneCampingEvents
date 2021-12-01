@@ -5,6 +5,17 @@
   margin: 20px 0;
   padding: 13px;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(33, 61, 94, 0.1);
+}
+
+.event_old {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding: 13px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 0, 0, 0.11);
 }
 
 .img {

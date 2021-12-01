@@ -5,9 +5,16 @@ import { formatDateForDisplay } from "@/utils/formatDate";
 
 export default function EventItem({ evt }) {
   const formattedDate = formatDateForDisplay(evt.date);
+  const today = new Date().toISOString();
+  let old;
+  if (evt.date > today) {
+    old = false;
+  } else {
+    old = true;
+  }
 
   return (
-    <div className={styles.event}>
+    <div className={old?styles.event_old:styles.event}>
       <div className={styles.img}>
         <Image
           src={

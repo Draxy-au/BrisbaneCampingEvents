@@ -23,8 +23,8 @@ export default function HomePage({ events }) {
 }
 
 export async function getStaticProps() {
-  const today = new Date();
-  const res = await fetch(`${API_URL}/events?_sort=date:DESC&_limit=3`);
+  const today = new Date().toISOString();
+  const res = await fetch(`${API_URL}/events?_where[date_gt]=${today}&_sort=date:DESC&_limit=3`);
   const events = await res.json();
 
   return {
