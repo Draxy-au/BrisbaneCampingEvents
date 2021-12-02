@@ -52,7 +52,11 @@ export const AuthProvider = ({ children }) => {
 
     if (res.ok) {
       setUser(data.user);
-      router.push("/account/dashboard");
+      if (data.user.role.type === "admin") {
+        router.push("/account/dashboard");
+      } else {
+        router.push("/events");
+      }
     } else {
       setError(data.message);
       setError(null);
@@ -75,7 +79,7 @@ export const AuthProvider = ({ children }) => {
   const checkUserLoggedIn = async (user) => {
     const res = await fetch(`${NEXT_URL}/api/user`);
     const data = await res.json();
-
+    console.log("test", data.user);
     if (res.ok) {
       setUser(data.user);
     } else {

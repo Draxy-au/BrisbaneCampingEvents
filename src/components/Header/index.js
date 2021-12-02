@@ -24,7 +24,7 @@ export default function Header() {
               <a>Events</a>
             </Link>
           </li>
-          {user ? (
+          {user && user.role.type === 'admin' && (
             // If logged in
             <>
               <li>
@@ -46,7 +46,23 @@ export default function Header() {
                 </button>
               </li>
             </>
-          ) : (
+          )} 
+          {user && user.role.type === 'authenticated' && (
+            // If logged in
+            <>
+              
+              <li>
+                <button
+                  onClick={() => logout()}
+                  className="btn-secondary btn-icon"
+                >
+                  <FaSignOutAlt /> Logout
+                </button>
+              </li>
+            </>
+          )} 
+          
+          {!user && (
             // If logged out
             <>
               <li>

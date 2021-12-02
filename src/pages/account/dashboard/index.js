@@ -33,7 +33,7 @@ export default function DashboardPage({ events, token }) {
         <h1>Dashboard</h1>
         <h3>My Events</h3>
 
-        {events.map((evt) => (
+        {events.length > 0 && events.map((evt) => (
           <DashboardEvent key={evt.id} evt={evt} handleDelete={deleteEvent} />
         ))}
       </div>
@@ -52,12 +52,15 @@ export async function getServerSideProps({ req }) {
   });
 
   const events = await res.json();
-  const sortDate = events.sort((a,b)=>{
-    let compA = new Date(a.date.slice(0,10))
-    let compB = new Date(b.date.slice(0,10))
-    return compB - compA;
-  });
-  
+  let sortDate = events;
+  if (events.length > 0) {
+    sortDate = events.sort((a, b) => {
+      let compA = new Date(a.date.slice(0, 10));
+      let compB = new Date(b.date.slice(0, 10));
+      return compB - compA;
+    });
+  } 
+
   return {
     props: {
       events: sortDate,
