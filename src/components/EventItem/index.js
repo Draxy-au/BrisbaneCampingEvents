@@ -2,8 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "@/styles/EventItem.module.css";
 import { formatDateForDisplay } from "@/utils/formatDate";
+import { useAuth } from "@/hooks/useAuth";
 
 export default function EventItem({ evt }) {
+  const { user } = useAuth();
   const formattedDate = formatDateForDisplay(evt.date);
   const today = new Date().toISOString();
   let old;
@@ -34,9 +36,16 @@ export default function EventItem({ evt }) {
         <h3>{evt.name}</h3>
       </div>
       <div className={styles.link}>
-        <Link href={`/events/${evt.slug}`}>
-          <a className="btn">Details</a>
-        </Link>
+        { user &&
+          <Link href={`/events/${evt.slug}`}>
+            <a className="btn">Details</a>
+          </Link>
+        }
+        { !user &&
+          <Link href={`/account/login`}>
+            <a className="btn">Details</a>
+          </Link>
+        }
       </div>
     </div>
   );
