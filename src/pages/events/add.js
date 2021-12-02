@@ -17,6 +17,7 @@ export default function AddEventPage({ token }) {
     date: '',
     time: '',
     description: '',
+    facebook: 'Not Created',
   })
 
   const router = useRouter()
@@ -31,6 +32,7 @@ export default function AddEventPage({ token }) {
 
     if (hasEmptyFields) {
       toast.error('Please fill in all fields')
+      return;
     }
 
     const res = await fetch(`${API_URL}/events`, {
@@ -126,6 +128,7 @@ export default function AddEventPage({ token }) {
               onChange={handleInputChange}
             />
           </div>
+          
         </div>
 
         <div>
@@ -138,6 +141,16 @@ export default function AddEventPage({ token }) {
             onChange={handleInputChange}
           ></textarea>
         </div>
+        <div>
+            <label htmlFor='facebook'>Facebook Event Link</label>
+            <input
+              type='text'
+              name='facebook'
+              id='facebook'
+              value={values.facebook}
+              onChange={handleInputChange}
+            />
+          </div>
 
         <input type='submit' value='Add Event' className='btn' />
       </form>

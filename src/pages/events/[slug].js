@@ -42,6 +42,9 @@ export default function EventPage({ evt }) {
 
         <EventMap evt={evt} />
 
+        <h3>Facebook Event Link: </h3>
+        <p><a href={evt.facebook} target="_blank" rel="noreferrer">{evt.facebook}</a></p>
+
         <Link href="/events">
           <a className={styles.back}>{"<"} Go Back</a>
         </Link>

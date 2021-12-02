@@ -4,8 +4,11 @@ export default function AboutPage() {
   return (
     <Layout title='About Brisbane Camping Events'>
       <h1>About</h1>
-      <p>This is an app to find the latest QLD Camping Bears Events.</p>
-      <p>Website developed by: William Hamilton</p>
+      <p>This website was developed for the QLD Camping Bears.</p>
+      <br />
+      <br />
+      <p>Website developed by: <a href='http://draxybearwd.com' target="_blank" rel="noreferrer">William Hamilton</a></p>
+
       <p>Version: 1.0.0</p>
     </Layout>
   )

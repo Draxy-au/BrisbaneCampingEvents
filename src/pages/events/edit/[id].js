@@ -22,6 +22,7 @@ export default function EditEventPage({ evt, token }) {
     date: formatDateForInput(evt.date),
     time: evt.time,
     description: evt.description,
+    facebook: evt.facebook,
   });
   const [imagePreview, setImagePreview] = useState(
     evt.image ? evt.image.formats.thumbnail.url : null
@@ -154,6 +155,17 @@ export default function EditEventPage({ evt, token }) {
             value={values.description}
             onChange={handleInputChange}
           ></textarea>
+        </div>
+
+        <div>
+          <label htmlFor="facebook">Facebook Event Link</label>
+          <input
+            type="text"
+            name="facebook"
+            id="facebook"
+            value={values.facebook}
+            onChange={handleInputChange}
+          ></input>
         </div>
 
         <input type="submit" value="Update Event" className="btn" />

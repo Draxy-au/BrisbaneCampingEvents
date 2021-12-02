@@ -52,10 +52,15 @@ export async function getServerSideProps({ req }) {
   });
 
   const events = await res.json();
-
+  const sortDate = events.sort((a,b)=>{
+    let compA = new Date(a.date.slice(0,10))
+    let compB = new Date(b.date.slice(0,10))
+    return compB - compA;
+  });
+  
   return {
     props: {
-      events,
+      events: sortDate,
       token,
     },
   };
