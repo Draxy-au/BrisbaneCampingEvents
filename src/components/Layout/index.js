@@ -17,7 +17,7 @@ export default function Layout({title, keywords, description, children}) {
         <meta property="og:title" content="QLD Camping Bears" />
         <meta property="og:description"
           content="We are a community social group for LGBTIQA+ individuals who identify as part of the Bear Community in South East QLD, who like to participate in Camping and Outdoor activities." />
-        <meta property="og:image" content="https://qldcampingbears.vercel.app/og.png" />
+        <meta property="og:image" content="https://qldcampingbears.vercel.app/images/og.png" />
         <meta property="og:image:alt" content="QLD Camping Bears" />
         <meta property="og:type" content="URL" />
         <meta property="og:url" content="https://qldcampingbears.vercel.app/" />
